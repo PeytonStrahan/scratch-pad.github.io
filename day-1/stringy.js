@@ -159,10 +159,29 @@ function beginsWith(string, char) {
  * TIP: How can you use Array access to your advantage here? How can you
  *      ensure uppercase and lowercase can be compared equally?
  */
+
+/*
+I: Function takes in a string and a single character (presumably a letter)
+O: Return a boolean that says true if the single character and the last character of the string are the same character, but returns false otherwise
+C: N/A
+E: Whether the character is uppercase or lowercase should not affect the output of the function
+*/
+
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
 
+    //make both the input string and input char lowercase
+    string = string.toLowerCase();
+    char = char.toLowerCase();
 
+    //determine if char and the last character of string are equal
+    if (string[string.length - 1] === char){
+        //return true if so
+        return true;
+    }
+
+    //return false otherwise
+    return false;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -172,10 +191,19 @@ function endsWith(string, char) {
  *
  * TIP: What's the operator to concatenate two Strings?
  */
+
+/*
+I: Function takes two strings
+O: Return a string made from concatenating the two input strings
+C: N/A
+E: N/A
+*/
+
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
+    //return the result of adding/concatenating the first input string to the second input string
+    return stringOne + stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -190,10 +218,30 @@ function concat(stringOne, stringTwo) {
  * TIP: This Function pulls out all the arguments passed to it and stores them
  *      in an Array called args.
  */
+
+/*
+I: Function takes in an unknown number of strings
+O: Return a new string made from concatenating all of the input strings
+C: N/A
+E: N/A
+*/
+
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+
+    // create a new string
+    var newString = "";
+    // converts the arguments object of the called function into an array
     var args = Array.from(arguments);
 
+    // loop through the args array
+    for (let i = 0; i < args.length; i++){
+        // add/concatenate each input string in args onto the new string
+        newString += args[i];
+    }
+
+    // return the new string
+    return newString;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -207,10 +255,25 @@ function join(stringOne, stringTwo) {
  *
  * TIP: What property of the String do we need to compare?
  */
+
+/*
+I: Function takes in two strings
+O: Return the string with the longer length
+C: N/A
+E: N/A
+*/
+
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
+    //determine if the first input string is longer than the second input string
+    if (stringOne.length > stringTwo.length){
+        //return the first input string if so
+        return stringOne;
+    }
 
+    //return the second input string otherwise
+    return stringTwo;
 
     // YOUR CODE ABOVE HERE //
 }
@@ -222,10 +285,57 @@ function longest(stringOne, stringTwo) {
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
+
+/*
+I: Function takes in two strings
+O: Return 1 if the first string is higher in alphabetical order than the second, return -1 otherwise
+C: N/A
+E: Function must return 0 when both input strings are equal
+*/
+
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
+    // determine if the two input strings are equal to each other
+    if (stringOne == stringTwo){
+        // return 0 if so
+        return 0;
+    }
 
+    // otherwise, determine if the first input string is the longer string
+    if (stringOne.length > stringTwo.length){
+        // assign a reference variable to the first input string's length if so
+        var refLength = stringOne.length;
+    } else {
+        // assign a reference variable to the second input string's length otherwise
+        var refLength = stringTwo.length;
+    }
+
+    // loop through both input strings
+    for (let i = 0; i < refLength; i++){
+        // determine if the current character of the second input string is undefined
+        if (stringTwo[i] === undefined){
+            // return -1 if so
+            return -1
+        }
+
+        // determine if the current character of the first input string is undefined
+        if (stringOne[i] === undefined){
+            // return 1 if so
+            return 1
+        }
+
+        // determine if the current character of the first input string is higher in alphabetical order than the second
+        if (stringOne[i] < stringTwo[i]){
+            // return 1 if so
+            return 1
+        }
+        // otherwise, determine if the current character of the first input string is lower in alphabetical order than the second
+        else if (stringOne[i] > stringTwo[i]){
+            // return -1 if so
+            return -1
+        }
+    }
 
     // YOUR CODE ABOVE HERE //
 }
@@ -238,11 +348,21 @@ function sortAscending(stringOne, stringTwo) {
  *
  * TIP: How can we compare Strings? Is 'a' greater than or less than 'b'?
  */
+
+/*
+I: Function takes in two strings
+O: Return 1 if the first string is lower in alphabetical order than the second, return -1 otherwise
+C: N/A
+E: Function must return 0 when both input strings are equal
+*/
+
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
 
-
-
+    // return the result of using the two input strings with .localeCompare,
+    // which is a built-in function that does what my previous function
+    // does but without typing out a large amount of code.
+    return stringOne.localeCompare(stringTwo);
 
     // YOUR CODE ABOVE HERE //
 }
