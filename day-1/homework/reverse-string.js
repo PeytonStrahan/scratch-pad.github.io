@@ -19,12 +19,25 @@
  *  d. how do you concatenate Strings? What operator do we use?
  */
 
+/*
+I: Function takes in a string
+O: Return a new string that is the reversed version of the input string
+C: You cannot use a method to solve this problem, must use a for loop
+E: N/A
+*/
+
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
     
-    
-    
-    
+    // create a variable to hold our result
+    var output = "";
+    // loop through the input string
+    for (var i = input.length - 1; i >= 0; i--){
+      // add current letter to output
+      output += input[i]; // output = output + input[i]
+    }
+    // return output variable
+    return output;
     // YOUR CODE GOES ABOVE HERE //
 }
 

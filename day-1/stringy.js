@@ -13,13 +13,19 @@
  * work?
  */
 
-
+/*
+I: Function takes in a string
+O: Returns number representing length of the input string
+C: N/A
+E: N/A
+*/
 
 
 function length(string) {
     // YOUR CODE BELOW HERE //
 
-   
+    // return the string property of the input string
+    return string.length;
     
     // YOUR CODE ABOVE HERE //
 }
