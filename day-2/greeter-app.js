@@ -33,11 +33,35 @@
  *      the exact case.
  */
 
+/*
+I: Function takes in a number (hour)
+O: Console log a message that varies depending on the value of the inputted hour
+C: N/A
+E: N/A
+*/
+
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
     
-    
-    
+    // determine if the inputted hour is 0, 11, or something in between
+    if (hour >= 0 && hour <= 11){
+        // print morning message if so
+        console.log("Good Morning!")
+    }
+    // otherwise, determine if the inputted hour is 12, 16, or something in between
+    else if (hour >= 12 && hour <= 16){
+        // print afternoon message if so
+        console.log("Good Afternoon!")
+    }
+    // otherwise, determine if the inputted hour is 17, 21, or something in between
+    else if (hour >= 17 && hour <= 21){
+        // print evening message if so
+        console.log("Good Evening!")
+    }
+    // otherwise, print night message
+    else {
+        console.log("Good Night!")
+    }
     
     // YOUR CODE ABOVE HERE //
 }
