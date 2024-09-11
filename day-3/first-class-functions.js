@@ -11,10 +11,20 @@
  * return a Function that tests whether a given value is greater than the 
  * base.
  */
+
+/*
+I: Function takes in a number (hour)
+O: Console log a message that varies depending on the value of the inputted hour
+C: N/A
+E: N/A
+*/
+
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
-   
+    return function(value){
+        return value > base;
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -25,6 +35,14 @@ function createGreaterThanFilter(base) {
  * base. (test means return true or false)
  * 
  */
+
+/*
+I: Function takes in a number (hour)
+O: Console log a message that varies depending on the value of the inputted hour
+C: N/A
+E: N/A
+*/
+
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
