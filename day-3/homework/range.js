@@ -35,26 +35,23 @@ function range(start, end) {
     // create a new empty array
     var newArr = [];
 
-    // create a function that loops from start to end, either incrementing or decrementing depending on its inputs
-    function loop(startInput, booleanInput, changeInput){
-        // make a loop that loops from the start value to the end value
-        for (startInput; booleanInput; changeInput){
+    // determine if start is greater than end
+    if (start > end){
+        // make a loop that decrements from the start value to the end value
+        for (let i = start; i >= end; i--){
+            // push each value into newArr
+            newArr.push(i);
+        }
+    }
+    // otherwise, make a loop that increments from the start value to the end value
+    else {
+        for (let i = start; i <= end; i++){
             // push each value into newArr
             newArr.push(i);
         }
     }
 
-    // determine if start is greater than end
-    if (start > end){
-        // call the loop function in a way that makes a loop that decrements from the start value to the end value
-        loop(let i = start, i >= end, i--)
-    }
-    // otherwise, call the loop function in a way that makes a loop that increments from the start value to the end value
-    else {
-        loop(let i = start, i <= end, i++);
-    }
-
-    // return the resulting array (newArr)
+    //return the new array (newArr)
     return newArr;
     
     // YOUR CODE GOES ABOVE HERE //
