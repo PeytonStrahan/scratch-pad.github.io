@@ -21,11 +21,41 @@
  *  b. you'll need a loop, which one is best?
  *  c. you'll wanna make use of the push() method of Array.
  */
+
+/*
+I: Function takes in two integers
+O: Returns an array including the two inputted integers and all integers between them in order
+C: N/A
+E: if the first inputted integer in greater than the second, then list the integers in the array from greatest to least, otherwise list them from least to greatest
+*/
+
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
     
-    
-    
+    // create a new empty array
+    var newArr = [];
+
+    // create a function that loops from start to end, either incrementing or decrementing depending on its inputs
+    function loop(startInput, booleanInput, changeInput){
+        // make a loop that loops from the start value to the end value
+        for (startInput; booleanInput; changeInput){
+            // push each value into newArr
+            newArr.push(i);
+        }
+    }
+
+    // determine if start is greater than end
+    if (start > end){
+        // call the loop function in a way that makes a loop that decrements from the start value to the end value
+        loop(let i = start, i >= end, i--)
+    }
+    // otherwise, call the loop function in a way that makes a loop that increments from the start value to the end value
+    else {
+        loop(let i = start, i <= end, i++);
+    }
+
+    // return the resulting array (newArr)
+    return newArr;
     
     // YOUR CODE GOES ABOVE HERE //
 }
